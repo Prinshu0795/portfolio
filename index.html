@@ -7,15 +7,34 @@
   <link rel="stylesheet" href="style.css" />
   <!-- TODO: Change profile.jpg to your real image name if needed -->
   <link rel="shortcut icon" href="images/prinshu.jpg" type="image/x-icon" />
+
+  <!-- subtle Google font (optional but improves look) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- ===== Decorative animated background (SVG blobs) ===== -->
+  <div class="bg-decor">
+    <!-- Inline svg blobs so we don't add or change image files -->
+    <svg class="blob blob-1" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(300,300)">
+        <path d="M120,-170C160,-120,191,-60,196,-2C201,56,180,111,137,148C94,185,29,205,-32,202C-92,199,-146,173,-169,121C-192,69,-184,-3,-150,-56C-116,-109,-56,-142,4,-149C64,-156,128,-180,120,-170Z"/>
+      </g>
+    </svg>
+
+    <svg class="blob blob-2" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(300,300)">
+        <path d="M72,-110C95,-78,118,-52,136,-18C154,16,167,66,142,101C118,136,57,156,4,154C-49,152,-98,127,-136,95C-174,63,-201,24,-196,-16C-191,-56,-154,-95,-110,-124C-66,-153,-33,-171,4,-176C41,-180,82,-141,72,-110Z"/>
+      </g>
+    </svg>
+  </div>
+
   <!-- ===== Header / Navbar ===== -->
   <header class="header">
     <div class="logo">
       <!-- You can change this branding text if you want -->
       <span>&lt;Prinshu/&gt;</span>
     </div>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main Navigation">
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -24,15 +43,16 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <button class="nav-toggle" id="navToggle">☰</button>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
   </header>
 
   <!-- ===== Hero Section ===== -->
-  <section id="hero" class="hero">
+  <section id="hero" class="hero section--reveal">
     <div class="hero-text">
       <p class="intro">Hi, I'm</p>
       <h1 class="name">Prinshu Kumar Gupta</h1>
-      <h2 class="role"> Full Stack Developer</h2>
+      <!-- role will animate via JS but text content remains unchanged -->
+      <h2 class="role" data-role="Full Stack Developer"> Full Stack Developer</h2>
       <p class="hero-desc">
         I’m a B.Tech 3rd-year student in Computer Science and Engineering with
         a strong interest in becoming a Full Stack Developer. I have experience
@@ -45,9 +65,9 @@
         <a href="#contact" class="btn outline">Contact Me</a>
       </div>
       <div class="hero-socials">
-        <a href="https://github.com/Prinshu0795" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/prinshu-kumar-gupta-8a964232b" target="_blank">LinkedIn</a>
-        <a href="https://leetcode.com/Prinshu_Gupta1" target="_blank">LeetCode</a>
+        <a href="https://github.com/Prinshu0795" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/prinshu-kumar-gupta-8a964232b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://leetcode.com/Prinshu_Gupta1" target="_blank" rel="noopener noreferrer">LeetCode</a>
       </div>
     </div>
     <div class="hero-image">
@@ -56,7 +76,7 @@
   </section>
 
   <!-- ===== About Section ===== -->
-  <section id="about" class="section about">
+  <section id="about" class="section about section--reveal">
     <h2 class="section-title">About Me</h2>
     <div class="about-content">
       <div>
@@ -85,7 +105,7 @@
   </section>
 
   <!-- ===== Skills Section ===== -->
-  <section id="skills" class="section skills">
+  <section id="skills" class="section skills section--reveal">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
@@ -108,7 +128,7 @@
   </section>
 
   <!-- ===== Projects Section ===== -->
-  <section id="projects" class="section projects">
+  <section id="projects" class="section projects section--reveal">
     <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
       
@@ -129,8 +149,8 @@
             <span>JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Prinshu0795" target="_blank"></a>
-            <a href="#" target="_blank"></a>
+            <a href="https://github.com/Prinshu0795" target="_blank" rel="noopener noreferrer"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"></a>
           </div>
         </div>
       </article>
@@ -152,8 +172,8 @@
             <span>Full Stack (Planned)</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Prinshu0795" target="_blank"></a>
-            <a href="#" target="_blank"></a>
+            <a href="https://github.com/Prinshu0795" target="_blank" rel="noopener noreferrer"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"></a>
           </div>
         </div>
       </article>
@@ -162,7 +182,7 @@
   </section>
 
   <!-- ===== Contact Section ===== -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="section contact section--reveal">
     <h2 class="section-title">Contact Me</h2>
     <p class="contact-text">
       I’m open to internships, collaborations, or just a friendly chat about
@@ -174,26 +194,26 @@
         <p><strong>Email:</strong> prinshukumarguptap.email@gmail.com</p>
 
         <p><strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/prinshu-kumar-gupta-8a964232b" target="_blank">
+          <a href="https://www.linkedin.com/in/prinshu-kumar-gupta-8a964232b" target="_blank" rel="noopener noreferrer">
             prinshu-kumar-gupta-8a964232b
           </a>
         </p>
 
         <p><strong>GitHub:</strong>
-          <a href="https://github.com/Prinshu0795" target="_blank">
+          <a href="https://github.com/Prinshu0795" target="_blank" rel="noopener noreferrer">
             Prinshu0795
           </a>
         </p>
 
         <p><strong>LeetCode:</strong>
-          <a href="https://leetcode.com/Prinshu_Gupta1" target="_blank">
+          <a href="https://leetcode.com/Prinshu_Gupta1" target="_blank" rel="noopener noreferrer">
             Prinshu_Gupta1
           </a>
         </p>
       </div>
 
       <!-- Contact Form -->
-      <form class="contact-form">
+      <form class="contact-form" onsubmit="return false;">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea rows="4" placeholder="Your Message" required></textarea>
